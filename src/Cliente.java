@@ -17,4 +17,11 @@ public class Cliente {
     public int getIdade(){
         return this.idade;
     }
+    public void verificarIdade(){
+        if (getIdade() > 18){
+            System.out.println("É maior de idade.");
+        } else {
+            System.out.println("É menor de idade");
+        }
+    }
 }

@@ -1,20 +1,21 @@
 import java.util.ArrayList;
 
 public class Locacao {
-    ArrayList<Filmes> filmesAlugados = new ArrayList<Filmes>();
-    private String cliente;
-    private String filmesLocados;
-    public Locacao(Cliente cliente) {
-        this.cliente = cliente.getNome();
-    }
+    Cliente cliente;
+    ArrayList<Filmes> filmes;
 
-    public void setFilmesAlugados(Filmes filme) {
-        filmesAlugados.add(filme);
-        filmesLocados = filme.getTitulo();
+    public Locacao(Cliente cliente){
+        this.cliente = cliente;
+        filmes = new ArrayList<Filmes>();
     }
-    public void mostrarLocacoesCliente(){
-        String nc = cliente;
-        String nf = filmesLocados;
-        System.out.println("O Cliente: \n" + nc + "\nPossui tais filmes locados: \n" + nf);
+    public void addFilme(Filmes filme){
+        filmes.add(filme);
+    }
+    public void mostrarFilmes(){
+        System.out.println("O Cliente: " + cliente.getNome());
+        System.out.println("Locou: ");
+        for (int x = 0; x < filmes.size(); x++){
+            System.out.println(filmes.get(x).getTitulo());
+        }
     }
 }
